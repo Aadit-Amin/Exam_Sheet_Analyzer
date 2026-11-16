@@ -71,7 +71,7 @@ def test_mistake_groups_stay_within_one_question():
 def test_api_predict_and_analyze():
     from main import app
     client = TestClient(app)
-    assert len(client.get("/api/questions").json()) == 5
+    assert len(client.get("/api/questions").json()) == len(bank)
 
     reply = client.post("/api/predict", json={"question_id": "Q1", "answer": "It separates network and host bits."})
     assert reply.status_code == 200

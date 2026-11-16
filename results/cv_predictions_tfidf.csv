@@ -1,91 +1,271 @@
 response_id,question_id,student_answer,label,majority,similarity_threshold,classifier,reference_similarity
-R001,Q1,It separates an IP address into the network and host parts.,correct,correct,correct,correct,0.5886245224548321
-R002,Q1,The mask tells which bits belong to the network and which identify the host.,correct,correct,correct,correct,0.24377856706166504
-R003,Q1,A subnet mask marks the network prefix and the remaining host portion.,correct,correct,correct,correct,0.3960443864493167
-R004,Q1,It defines the boundary between network bits and host bits in an IP address.,correct,correct,correct,correct,0.3360733169567732
-R005,Q1,"With a /24 mask, the first 24 bits identify the network and the other 8 bits are the host part of an IPv4 address.",correct,correct,correct,correct,0.3858519614484018
-R006,Q1,"For IPv4, 255.255.255.0 indicates a 24-bit network part and an 8-bit host part.",correct,correct,correct,correct,0.2743690168619122
-R007,Q1,It identifies the network portion of an IP address.,partial,correct,correct,partial,0.4818098927218623
-R008,Q1,It shows which bits represent the network.,partial,correct,correct,partial,0.14721348955397143
-R009,Q1,It identifies the host portion of an IP address.,partial,correct,correct,partial,0.44826644163345253
-R010,Q1,The mask tells us which bits are available for host identifiers.,partial,correct,partial,incorrect,0.10288909251222832
-R011,Q1,It helps determine whether an IP destination is on the local subnet.,partial,correct,correct,correct,0.20931089210560627
-R012,Q1,A device uses it when checking whether a destination belongs to its subnet.,partial,correct,partial,correct,0.08164020345338091
-R013,Q1,It encrypts an IP address so nobody can read it.,incorrect,correct,correct,partial,0.23063791972452224
-R014,Q1,A subnet mask keeps the address secret by encryption.,incorrect,correct,correct,incorrect,0.33671561087765045
-R015,Q1,It automatically gives every computer a new IP address.,incorrect,correct,correct,partial,0.1580299520199797
-R016,Q1,The mask allocates IP addresses when devices join the network.,incorrect,correct,correct,incorrect,0.22074083396029576
-R017,Q1,A subnet mask does not distinguish network bits from host bits.,incorrect,correct,correct,correct,0.22775319282417578
-R018,Q1,The network and host portions cannot be identified using a subnet mask.,incorrect,correct,correct,correct,0.6576140408516622
-R020,Q2,DNS translates domain names into IP addresses.,correct,correct,correct,incorrect,0.4621978409000341
-R021,Q2,It maps a host name to its corresponding IP address.,correct,correct,partial,partial,0.10644951756587843
-R022,Q2,"When I type example.com, DNS can return the IP address used to reach that host.",correct,correct,partial,correct,0.16089037878457654
-R023,Q2,It lets a computer find an IP address from a website name such as example.com.,correct,correct,incorrect,correct,0.019354202220798766
-R024,Q2,DNS provides name resolution: a domain is looked up to obtain its numerical IP address.,correct,correct,correct,correct,0.12036499113175725
-R025,Q2,It resolves human-readable domain names to the Internet Protocol addresses of hosts.,correct,correct,correct,correct,0.304506158491536
-R026,Q2,DNS is a naming service used on the internet.,partial,correct,incorrect,incorrect,0.07473573623952462
-R027,Q2,It manages domain-name information.,partial,correct,incorrect,partial,0.0530204730387448
-R028,Q2,It helps us locate websites using their names.,partial,correct,correct,incorrect,0.14712949241027073
-R029,Q2,"It lets users access a site by its name, but I cannot explain the lookup.",partial,correct,incorrect,correct,0.017748918323104518
-R030,Q2,It can tell a sender which mail server handles a domain.,partial,correct,partial,incorrect,0.07788615445355905
-R031,Q2,One use is looking up a domain's mail exchanger.,partial,correct,incorrect,partial,0.04214804564636924
-R032,Q2,DNS assigns IP addresses to newly connected computers.,incorrect,correct,correct,incorrect,0.2863544225391631
-R033,Q2,It leases an IP address to each device joining Wi-Fi.,incorrect,correct,incorrect,partial,0.02802544535883803
-R034,Q2,DNS translates website names into MAC addresses.,incorrect,correct,correct,incorrect,0.23727919138100215
-R035,Q2,It resolves domain names directly to Ethernet hardware addresses.,incorrect,correct,correct,correct,0.3299476755628325
-R036,Q2,DNS does not translate domain names into IP addresses.,incorrect,correct,correct,incorrect,0.43222594087410127
-R037,Q2,DNS cannot resolve a host name to its IP address.,incorrect,correct,partial,partial,0.08354729380686618
-R039,Q3,"The receiver acknowledges data, and the sender resends data if acknowledgement is missing.",correct,correct,correct,correct,0.17095281383763544
-R040,Q3,TCP confirms receipt with ACKs and retransmits data that has not been acknowledged.,correct,correct,correct,correct,0.3375882972380898
-R041,Q3,Acknowledgements tell the sender what arrived. A timeout can cause missing data to be sent again.,correct,correct,partial,correct,0.10718182423933281
-R042,Q3,"An ACK reports receipt, while retransmission after a timeout helps recover lost data.",correct,correct,correct,correct,0.15370721351699462
-R043,Q3,"TCP uses ACKs to track delivered bytes and retransmits segments believed lost, for example after duplicate ACKs.",correct,correct,incorrect,correct,0.026276558759892994
-R044,Q3,Received data is acknowledged; missing segments can be resent after duplicate acknowledgements indicate a gap.,correct,correct,correct,correct,0.30584309712781527
-R045,Q3,TCP uses acknowledgements to confirm that data was received.,partial,correct,correct,correct,0.41320203284141194
-R046,Q3,The receiving device sends ACKs when it receives data.,partial,correct,partial,partial,0.0816627601368545
-R047,Q3,Lost data is transmitted again.,partial,correct,partial,incorrect,0.08169265336891426
+R001,Q1,It separates an IP address into the network and host parts.,correct,correct,correct,correct,0.5371462190636195
+R002,Q1,The mask tells which bits belong to the network and which identify the host.,correct,correct,correct,correct,0.247484069071638
+R003,Q1,A subnet mask marks the network prefix and the remaining host portion.,correct,correct,correct,correct,0.4078554593080917
+R004,Q1,It defines the boundary between network bits and host bits in an IP address.,correct,correct,correct,correct,0.3313999923311478
+R005,Q1,"With a /24 mask, the first 24 bits identify the network and the other 8 bits are the host part of an IPv4 address.",correct,correct,correct,correct,0.3352095712879733
+R006,Q1,"For IPv4, 255.255.255.0 indicates a 24-bit network part and an 8-bit host part.",correct,correct,correct,correct,0.17517162804829828
+R007,Q1,It identifies the network portion of an IP address.,partial,correct,correct,correct,0.4632339663260608
+R008,Q1,It shows which bits represent the network.,partial,correct,correct,partial,0.15384580960123345
+R009,Q1,It identifies the host portion of an IP address.,partial,correct,correct,correct,0.4194173575974609
+R010,Q1,The mask tells us which bits are available for host identifiers.,partial,correct,correct,correct,0.11143048143873811
+R011,Q1,It helps determine whether an IP destination is on the local subnet.,partial,correct,correct,correct,0.17094930212214252
+R012,Q1,A device uses it when checking whether a destination belongs to its subnet.,partial,correct,partial,correct,0.07683305779482467
+R013,Q1,It encrypts an IP address so nobody can read it.,incorrect,correct,correct,correct,0.22128134937943272
+R014,Q1,A subnet mask keeps the address secret by encryption.,incorrect,correct,correct,incorrect,0.2790453417999049
+R015,Q1,It automatically gives every computer a new IP address.,incorrect,correct,partial,partial,0.11914692645112278
+R016,Q1,The mask allocates IP addresses when devices join the network.,incorrect,correct,correct,correct,0.22817653558469714
+R017,Q1,A subnet mask does not distinguish network bits from host bits.,incorrect,correct,correct,correct,0.24996781081709732
+R018,Q1,The network and host portions cannot be identified using a subnet mask.,incorrect,correct,correct,correct,0.662603467903261
+R020,Q2,DNS translates domain names into IP addresses.,correct,correct,correct,incorrect,0.43227797916359983
+R021,Q2,It maps a host name to its corresponding IP address.,correct,correct,partial,partial,0.09993020154588686
+R022,Q2,"When I type example.com, DNS can return the IP address used to reach that host.",correct,correct,partial,correct,0.11221823378244263
+R023,Q2,It lets a computer find an IP address from a website name such as example.com.,correct,correct,incorrect,correct,0.018314530516058854
+R024,Q2,DNS provides name resolution: a domain is looked up to obtain its numerical IP address.,correct,correct,correct,correct,0.11070410868119628
+R025,Q2,It resolves human-readable domain names to the Internet Protocol addresses of hosts.,correct,correct,correct,correct,0.29270432786608425
+R026,Q2,DNS is a naming service used on the internet.,partial,correct,partial,incorrect,0.08807219405199551
+R027,Q2,It manages domain-name information.,partial,correct,partial,partial,0.0650073252276718
+R028,Q2,It helps us locate websites using their names.,partial,correct,correct,incorrect,0.13923366508322746
+R029,Q2,"It lets users access a site by its name, but I cannot explain the lookup.",partial,correct,incorrect,correct,0.011023601233547698
+R030,Q2,It can tell a sender which mail server handles a domain.,partial,correct,correct,incorrect,0.08521512077701493
+R031,Q2,One use is looking up a domain's mail exchanger.,partial,correct,correct,partial,0.05776411323740467
+R032,Q2,DNS assigns IP addresses to newly connected computers.,incorrect,correct,correct,incorrect,0.24738434134745346
+R033,Q2,It leases an IP address to each device joining Wi-Fi.,incorrect,correct,partial,partial,0.029788430736100952
+R034,Q2,DNS translates website names into MAC addresses.,incorrect,correct,correct,incorrect,0.21336098159798636
+R035,Q2,It resolves domain names directly to Ethernet hardware addresses.,incorrect,correct,correct,partial,0.33453551869495946
+R036,Q2,DNS does not translate domain names into IP addresses.,incorrect,correct,correct,correct,0.44718542842754255
+R037,Q2,DNS cannot resolve a host name to its IP address.,incorrect,correct,partial,incorrect,0.0912541952262933
+R039,Q3,"The receiver acknowledges data, and the sender resends data if acknowledgement is missing.",correct,correct,partial,correct,0.1428767472640556
+R040,Q3,TCP confirms receipt with ACKs and retransmits data that has not been acknowledged.,correct,correct,correct,correct,0.2868180167579788
+R041,Q3,Acknowledgements tell the sender what arrived. A timeout can cause missing data to be sent again.,correct,correct,partial,correct,0.090619108070907
+R042,Q3,"An ACK reports receipt, while retransmission after a timeout helps recover lost data.",correct,correct,partial,correct,0.12942527985234778
+R043,Q3,"TCP uses ACKs to track delivered bytes and retransmits segments believed lost, for example after duplicate ACKs.",correct,correct,incorrect,correct,0.012772261936772018
+R044,Q3,Received data is acknowledged; missing segments can be resent after duplicate acknowledgements indicate a gap.,correct,correct,correct,correct,0.30997174848395587
+R045,Q3,TCP uses acknowledgements to confirm that data was received.,partial,correct,correct,correct,0.4026845831855381
+R046,Q3,The receiving device sends ACKs when it receives data.,partial,correct,partial,incorrect,0.051826570334769693
+R047,Q3,Lost data is transmitted again.,partial,correct,partial,partial,0.05972000110554376
 R048,Q3,TCP retransmits segments when it detects a loss.,partial,correct,incorrect,incorrect,0.0
-R049,Q3,Sequence numbers allow TCP to put received data back in order.,partial,correct,correct,correct,0.2817069428773408
+R049,Q3,Sequence numbers allow TCP to put received data back in order.,partial,correct,correct,correct,0.19747246759036505
 R050,Q3,TCP numbers bytes so the receiver can reconstruct their order.,partial,correct,incorrect,incorrect,0.0
-R051,Q3,TCP never retransmits lost data.,incorrect,correct,correct,partial,0.0750243990770046
+R051,Q3,TCP never retransmits lost data.,incorrect,correct,correct,partial,0.053458271441878265
 R052,Q3,If a TCP packet is lost it is permanently discarded without a retry.,incorrect,correct,incorrect,correct,0.0
-R053,Q3,Acknowledgements encrypt the data and retransmissions decrypt it.,incorrect,correct,correct,incorrect,0.4774670724833647
-R054,Q3,"ACKs provide encryption, and resending performs decryption.",incorrect,correct,incorrect,partial,0.048870485301800964
-R055,Q3,"TCP prevents all packet loss, so acknowledgements are unnecessary.",incorrect,correct,partial,partial,0.05833346731295046
+R053,Q3,Acknowledgements encrypt the data and retransmissions decrypt it.,incorrect,correct,correct,incorrect,0.374676491139533
+R054,Q3,"ACKs provide encryption, and resending performs decryption.",incorrect,correct,partial,incorrect,0.02692484624858783
+R055,Q3,"TCP prevents all packet loss, so acknowledgements are unnecessary.",incorrect,correct,partial,incorrect,0.05968963221945442
 R056,Q3,Every TCP packet is guaranteed never to be lost in the network.,incorrect,correct,incorrect,correct,0.0
-R058,Q4,A router connects different networks and uses a routing table to decide where packets go next.,correct,correct,correct,correct,0.2660340286796815
-R059,Q4,It forwards packets between networks by looking up the next hop in routing information.,correct,correct,correct,correct,0.5882634343645144
-R060,Q4,It examines a packet's destination IP address and its routing table to forward the packet towards another network.,correct,correct,partial,correct,0.059991213104927554
-R061,Q4,"Routers deliver packets across networks, selecting an outgoing route using the destination address.",correct,correct,correct,correct,0.15562870726787484
-R062,Q4,It can send LAN traffic towards a remote network using a matching route or default route.,correct,correct,incorrect,correct,0.04906806838000982
-R063,Q4,A router forwards traffic from one network to another through the next hop selected by a route.,correct,correct,correct,correct,0.3406532458345938
-R064,Q4,It connects different networks.,partial,correct,correct,partial,0.21221972179123713
-R065,Q4,It forwards packets from one network to another.,partial,correct,correct,partial,0.15867524943095257
-R066,Q4,It chooses a next hop using its routing table.,partial,correct,correct,incorrect,0.30691055967906067
-R067,Q4,It looks up destination routes to decide where to send packets.,partial,correct,partial,partial,0.08335064098769283
-R068,Q4,It can provide the default gateway for a computer.,partial,correct,incorrect,incorrect,0.018639174032053767
-R069,Q4,A router is often the gateway used by devices on a LAN.,partial,correct,partial,incorrect,0.08927792632528912
-R070,Q4,A router can only connect devices within the same network and cannot connect separate networks.,incorrect,correct,partial,correct,0.1114721205314832
-R071,Q4,Routers are unable to forward packets between different IP networks.,incorrect,correct,correct,correct,0.3312408691653393
-R072,Q4,A router translates all domain names into IP addresses as its main routing function.,incorrect,correct,correct,correct,0.0904840007678578
-R073,Q4,Its routing table is a list of website names that it translates into IP addresses.,incorrect,correct,partial,correct,0.03931603534401918
-R074,Q4,It forwards every packet out of every interface regardless of the destination.,incorrect,correct,incorrect,incorrect,0.06818373928800853
-R075,Q4,Routers always broadcast incoming IP packets to all attached networks.,incorrect,correct,correct,partial,0.14705084109684963
-R077,Q5,A VLAN logically divides a switched network into separate broadcast domains.,correct,correct,correct,incorrect,0.497456241925923
-R078,Q5,It groups switch ports logically so each VLAN forms its own Layer 2 broadcast domain.,correct,correct,correct,correct,0.5334779375593811
-R079,Q5,"Devices can be placed in logical groups on switches, with broadcasts confined to their VLAN.",correct,correct,correct,correct,0.12894592409381556
-R080,Q5,A VLAN is a logical set of ports or devices whose Layer 2 broadcasts are isolated from other VLANs.,correct,correct,correct,correct,0.40094513760377026
-R081,Q5,"One physical switch can support multiple logical LANs, each with a separate broadcast domain.",correct,correct,correct,correct,0.20764587018928157
-R082,Q5,VLANs create logical LAN groups on switching equipment and separate their broadcast traffic.,correct,correct,correct,correct,0.15486516126615518
-R083,Q5,A VLAN is a logical grouping of devices on a switch.,partial,correct,correct,incorrect,0.1766272646628657
-R084,Q5,It groups switch ports into virtual LANs.,partial,correct,correct,incorrect,0.3524118321868497
-R085,Q5,A VLAN creates a separate broadcast domain.,partial,correct,correct,partial,0.2824350500240869
-R086,Q5,Broadcasts stay within their VLAN.,partial,correct,partial,partial,0.06188001242380193
-R087,Q5,VLANs can separate departments using the same switching infrastructure.,partial,correct,incorrect,partial,0.046991129373832506
-R088,Q5,They help keep different departments' network traffic separated.,partial,correct,incorrect,partial,0.0
-R089,Q5,A VLAN automatically encrypts all Ethernet traffic.,incorrect,correct,incorrect,partial,0.05733575246596591
-R090,Q5,VLANs are encryption protocols for switch traffic.,incorrect,correct,incorrect,partial,0.05716420682540024
-R091,Q5,Every VLAN must use its own physically separate switch.,incorrect,correct,partial,incorrect,0.1580827649895575
-R092,Q5,Two VLANs can never exist on the same physical switch.,incorrect,correct,incorrect,incorrect,0.040989621938141686
-R093,Q5,VLANs combine all switch ports into one shared broadcast domain.,incorrect,correct,correct,incorrect,0.37639676415586304
+R058,Q4,A router connects different networks and uses a routing table to decide where packets go next.,correct,correct,correct,correct,0.26091707638983674
+R059,Q4,It forwards packets between networks by looking up the next hop in routing information.,correct,correct,correct,correct,0.604149447969937
+R060,Q4,It examines a packet's destination IP address and its routing table to forward the packet towards another network.,correct,correct,partial,correct,0.04697081115047888
+R061,Q4,"Routers deliver packets across networks, selecting an outgoing route using the destination address.",correct,correct,partial,correct,0.12561570178444878
+R062,Q4,It can send LAN traffic towards a remote network using a matching route or default route.,correct,correct,partial,correct,0.04079917033333378
+R063,Q4,A router forwards traffic from one network to another through the next hop selected by a route.,correct,correct,correct,correct,0.34048325764282666
+R064,Q4,It connects different networks.,partial,correct,correct,partial,0.19151292990128305
+R065,Q4,It forwards packets from one network to another.,partial,correct,partial,partial,0.1376611079126964
+R066,Q4,It chooses a next hop using its routing table.,partial,correct,correct,incorrect,0.30483720964830413
+R067,Q4,It looks up destination routes to decide where to send packets.,partial,correct,partial,incorrect,0.06223266823466383
+R068,Q4,It can provide the default gateway for a computer.,partial,correct,incorrect,incorrect,0.01301805573877985
+R069,Q4,A router is often the gateway used by devices on a LAN.,partial,correct,partial,incorrect,0.05865285544953812
+R070,Q4,A router can only connect devices within the same network and cannot connect separate networks.,incorrect,correct,partial,correct,0.07176769148114627
+R071,Q4,Routers are unable to forward packets between different IP networks.,incorrect,correct,correct,correct,0.3311181682893016
+R072,Q4,A router translates all domain names into IP addresses as its main routing function.,incorrect,correct,correct,correct,0.07744178809504963
+R073,Q4,Its routing table is a list of website names that it translates into IP addresses.,incorrect,correct,partial,correct,0.03690846776591194
+R074,Q4,It forwards every packet out of every interface regardless of the destination.,incorrect,correct,correct,incorrect,0.051816508571543685
+R075,Q4,Routers always broadcast incoming IP packets to all attached networks.,incorrect,correct,correct,incorrect,0.11277225202142302
+R077,Q5,A VLAN logically divides a switched network into separate broadcast domains.,correct,correct,correct,incorrect,0.4639156942269472
+R078,Q5,It groups switch ports logically so each VLAN forms its own Layer 2 broadcast domain.,correct,correct,correct,correct,0.5559539669509256
+R079,Q5,"Devices can be placed in logical groups on switches, with broadcasts confined to their VLAN.",correct,correct,correct,correct,0.13700549733845982
+R080,Q5,A VLAN is a logical set of ports or devices whose Layer 2 broadcasts are isolated from other VLANs.,correct,correct,correct,correct,0.3246899897907188
+R081,Q5,"One physical switch can support multiple logical LANs, each with a separate broadcast domain.",correct,correct,correct,correct,0.23896651210883718
+R082,Q5,VLANs create logical LAN groups on switching equipment and separate their broadcast traffic.,correct,correct,correct,correct,0.1729520057375154
+R083,Q5,A VLAN is a logical grouping of devices on a switch.,partial,correct,correct,incorrect,0.1985638864997588
+R084,Q5,It groups switch ports into virtual LANs.,partial,correct,correct,partial,0.35197181288263507
+R085,Q5,A VLAN creates a separate broadcast domain.,partial,correct,correct,partial,0.3148564726077253
+R086,Q5,Broadcasts stay within their VLAN.,partial,correct,partial,partial,0.07248487426437684
+R087,Q5,VLANs can separate departments using the same switching infrastructure.,partial,correct,partial,incorrect,0.05681595472634303
+R088,Q5,They help keep different departments' network traffic separated.,partial,correct,incorrect,incorrect,0.0
+R089,Q5,A VLAN automatically encrypts all Ethernet traffic.,incorrect,correct,partial,incorrect,0.06492909938069956
+R090,Q5,VLANs are encryption protocols for switch traffic.,incorrect,correct,partial,partial,0.07246596224317717
+R091,Q5,Every VLAN must use its own physically separate switch.,incorrect,correct,correct,incorrect,0.160147529399828
+R092,Q5,Two VLANs can never exist on the same physical switch.,incorrect,correct,partial,incorrect,0.047853718290631224
+R093,Q5,VLANs combine all switch ports into one shared broadcast domain.,incorrect,correct,correct,correct,0.3768804960625091
 R094,Q5,Broadcasts always pass freely between different VLANs.,incorrect,correct,incorrect,partial,0.0
+R096,Q6,"An IP address is a logical Layer 3 address used for routing across networks, whereas a MAC address is a physical Layer 2 address burned into the hardware for local frame delivery.",correct,correct,correct,correct,0.8533732712517172
+R097,Q6,"IP is a logical address that routes packets on layer 3, while MAC is a physical hardware address on layer 2 used inside local networks.",correct,correct,correct,correct,0.34921658983805864
+R098,Q6,"IP addresses change depending on which network you connect to and help with global routing, but MAC addresses are permanent physical identifiers on the NIC.",correct,correct,correct,correct,0.07548939759186475
+R099,Q6,IP is logical and routable across different networks; MAC is hardware-based and only used for direct communication on the local subnet.,correct,correct,correct,correct,0.28258485588758187
+R100,Q6,IP address works at network layer for end-to-end routing. MAC address works at data link layer for hop-to-hop transmission.,correct,correct,correct,correct,0.2847553644910977
+R101,Q6,"IP = layer 3 logical routing address, MAC = layer 2 physical device address.",correct,correct,correct,partial,0.3720930166508587
+R102,Q6,An IP address identifies a device on the internet and allows packets to be routed.,partial,correct,correct,incorrect,0.1162022305288643
+R103,Q6,IP address is used to route packets across routers.,partial,correct,correct,partial,0.22836245679109685
+R104,Q6,MAC address is the physical hardware address burned into your network card.,partial,correct,correct,partial,0.20729465778415498
+R105,Q6,MAC address is the 48-bit hex address of the NIC device.,partial,correct,correct,partial,0.20657518857925863
+R106,Q6,"They are both addresses for computers, but IP is numbers like 192.168.1.1 and MAC has letters and numbers.",partial,correct,partial,incorrect,0.07705688773421515
+R107,Q6,One is for the internet and the other is for your laptop.,partial,correct,partial,partial,0.08410170777109013
+R108,Q6,IP and MAC addresses are identical and can be used interchangeably on switches.,incorrect,correct,partial,partial,0.05400407358672545
+R109,Q6,There is no difference between an IP address and a MAC address.,incorrect,correct,correct,partial,0.18487780167910417
+R110,Q6,MAC address is a logical layer 3 address and IP address is the physical hardware chip.,incorrect,correct,correct,correct,0.5076791869481252
+R111,Q6,An IP address is burned into the network card while MAC changes with every router.,incorrect,correct,correct,partial,0.17903694870216819
+R112,Q6,IP addresses are used to encrypt web passwords and MAC addresses compress video.,incorrect,correct,partial,partial,0.07158517895710514
+R113,Q6,MAC address translates website names to IP addresses.,incorrect,correct,partial,partial,0.12977560026883614
+R115,Q7,A default gateway is the router that a host sends packets to when the destination IP address is outside the local network.,correct,correct,correct,correct,0.23806896709208467
+R116,Q7,It acts as an access point or router for local devices to route traffic destined for external or remote networks.,correct,correct,correct,correct,0.26074898822382025
+R117,Q7,"When a computer wants to talk to an IP on another subnet, it sends the data to the default gateway router to forward it.",correct,correct,partial,correct,0.13826138352391457
+R118,Q7,The gateway is the exit node that takes packets from the LAN and forwards them out to the WAN or internet.,correct,correct,correct,correct,0.1691172308293243
+R119,Q7,It is the IP address of the local router used as the next hop for all destinations not on the local subnet.,correct,correct,correct,correct,0.08426815219292645
+R120,Q7,Router interface on LAN that forwards non-local subnet traffic.,correct,correct,correct,incorrect,0.2975514073720722
+R121,Q7,It is the router on your network.,partial,correct,partial,partial,0.05427007134668401
+R122,Q7,It is the IP of your home router.,partial,correct,partial,partial,0.06130600210537124
+R123,Q7,It connects your computer to the internet.,partial,correct,incorrect,partial,0.0
+R124,Q7,Allows computers to access outside websites.,partial,correct,incorrect,partial,0.0
+R125,Q7,It is where packets go when there is no specific route in the routing table.,partial,correct,correct,incorrect,0.26362563257444416
+R126,Q7,The default route 0.0.0.0/0.,partial,correct,correct,partial,0.13137422885870578
+R127,Q7,A default gateway assigns IP addresses to devices when they turn on.,incorrect,correct,correct,incorrect,0.18665571321440172
+R128,Q7,It distributes IP addresses dynamically like a DHCP server.,incorrect,correct,incorrect,partial,0.0
+R129,Q7,A default gateway translates domain names into numerical IP addresses.,incorrect,correct,partial,incorrect,0.1131956663805154
+R130,Q7,It resolves hostnames like google.com.,incorrect,correct,incorrect,partial,0.0
+R131,Q7,The default gateway prevents computers from connecting to the router.,incorrect,correct,correct,incorrect,0.1548584110229959
+R132,Q7,It acts as a physical cable between the monitor and CPU.,incorrect,correct,incorrect,partial,0.0
+R134,Q8,"HTTP sends data in unencrypted plain text, while HTTPS uses SSL/TLS encryption to protect data in transit.",correct,correct,correct,correct,0.7075049134568018
+R135,Q8,"The key difference is security: HTTP is cleartext and vulnerable to sniffing, whereas HTTPS encrypts the traffic using TLS.",correct,correct,partial,correct,0.11698065308133106
+R136,Q8,"HTTPS is HTTP with SSL/TLS encryption, meaning credentials and data cannot be intercepted by attackers, unlike plain HTTP.",correct,correct,correct,correct,0.36637234319429424
+R137,Q8,HTTP has no encryption; HTTPS encrypts all communication and verifies the identity of the server via certificates.,correct,correct,partial,correct,0.11122610135624078
+R138,Q8,HTTP runs on port 80 unencrypted; HTTPS runs on port 443 encrypted with TLS.,correct,correct,partial,correct,0.11888260542202667
+R139,Q8,"HTTP = plain text, no security. HTTPS = encrypted via SSL/TLS.",correct,correct,correct,correct,0.32882835541333855
+R140,Q8,HTTPS is more secure than HTTP.,partial,correct,partial,partial,0.08785354585999527
+R141,Q8,HTTPS has the S which stands for secure.,partial,correct,partial,partial,0.037773607612343316
+R142,Q8,HTTPS uses encryption like SSL.,partial,correct,correct,partial,0.3170071407122003
+R143,Q8,HTTPS has a padlock icon in browser to show SSL certificate.,partial,correct,correct,incorrect,0.17961484436346578
+R144,Q8,HTTP transmits plain text data across web pages.,partial,correct,correct,partial,0.34304458760657364
+R145,Q8,HTTP uses port 80 and HTTPS uses port 443.,partial,correct,correct,partial,0.1536763538020687
+R146,Q8,HTTP is encrypted while HTTPS transmits data in plain text.,incorrect,correct,correct,partial,0.47381232348228497
+R147,Q8,HTTPS is unencrypted and insecure compared to HTTP.,incorrect,correct,correct,partial,0.2350553103990111
+R148,Q8,HTTPS is a database query protocol while HTTP is a programming language.,incorrect,correct,correct,incorrect,0.11155715703918549
+R149,Q8,HTTP is used for fiber optics and HTTPS is used for Wi-Fi.,incorrect,correct,correct,incorrect,0.06454614504118292
+R150,Q8,There is no security difference between HTTP and HTTPS.,incorrect,correct,partial,incorrect,0.06842566475845434
+R151,Q8,HTTPS is an antivirus program that deletes viruses from files.,incorrect,correct,partial,incorrect,0.033475379349823794
+R153,Q9,"A process is an independent executing program with its own memory address space, while a thread is a lightweight unit of execution within a process that shares memory with other threads.",correct,correct,correct,correct,0.6132849436394304
+R154,Q9,"A process has isolated memory and system resources. Threads live inside a process and share its heap, global variables, and code.",correct,correct,correct,correct,0.15812804851704837
+R155,Q9,"Processes do not share memory by default and have heavy context switching overhead, whereas threads share the same process memory and switch faster.",correct,correct,partial,correct,0.0985948483992713
+R156,Q9,A process is a running program with private memory; a thread is a lightweight path of execution inside that process sharing its address space.,correct,correct,correct,correct,0.4097032227803728
+R157,Q9,Process = separate address space. Thread = lightweight sub-task sharing process memory.,correct,correct,correct,partial,0.23749651138217973
+R158,Q9,Processes are isolated from each other in RAM; multiple threads run inside one process sharing its memory.,correct,correct,partial,incorrect,0.0980181062462145
+R159,Q9,A thread is lightweight and a process is heavyweight.,partial,correct,correct,partial,0.34680961610097727
+R160,Q9,Threads run faster than processes.,partial,correct,incorrect,partial,0.0
+R161,Q9,A process is a program in execution.,partial,correct,correct,incorrect,0.2865511217068268
+R162,Q9,A process has its own PID and virtual memory space.,partial,correct,correct,partial,0.27264081040090216
+R163,Q9,Threads allow multitasking inside an application.,partial,correct,partial,partial,0.10681253054904005
+R164,Q9,Threads share variables and memory.,partial,correct,partial,partial,0.04594221623666825
+R165,Q9,A process runs inside a thread.,incorrect,correct,correct,partial,0.2000363107709065
+R166,Q9,Threads have completely independent memory spaces and processes share memory.,incorrect,correct,partial,partial,0.12172163596635953
+R167,Q9,A process is hardware and a thread is software.,incorrect,correct,correct,partial,0.2837714396399829
+R168,Q9,Thread means the CPU fan speed and process means the keyboard.,incorrect,correct,correct,partial,0.08069578463603738
+R169,Q9,Processes and threads are identical and mean the exact same thing in Linux.,incorrect,correct,incorrect,partial,0.0
+R170,Q9,Threads never run concurrently.,incorrect,correct,incorrect,partial,0.0
+R172,Q10,"Virtual memory uses secondary storage like an SSD or HDD as an extension of physical RAM, allowing programs larger than RAM to run while providing process isolation.",correct,correct,correct,correct,0.6544320803156269
+R173,Q10,It is a memory management technique where disk space is used as swap or paging space to extend RAM and give each program its own private address space.,correct,correct,correct,correct,0.0822046192723832
+R174,Q10,"Virtual memory maps virtual addresses to physical RAM or disk pages, solving the problem of running out of physical memory when applications require more space.",correct,correct,correct,correct,0.2360717498314116
+R175,Q10,It creates the illusion of a very large contiguous memory space by paging data to disk when RAM is full.,correct,correct,correct,correct,0.09461223550610234
+R176,Q10,Uses hard drive storage to supplement RAM and isolate process memory so one program cannot crash another.,correct,correct,partial,correct,0.1313318061043902
+R177,Q10,"Extends physical RAM using disk space, solving physical memory limits.",correct,correct,correct,partial,0.17859527722538585
+R178,Q10,It is extra memory when your computer runs out of RAM.,partial,correct,correct,partial,0.14841010008618052
+R179,Q10,Virtual memory helps run games without lagging when RAM is low.,partial,correct,correct,incorrect,0.19171123421288921
+R180,Q10,It uses a page file on the hard drive.,partial,correct,partial,partial,0.035464782333117305
+R181,Q10,It provides address translation using the MMU.,partial,correct,incorrect,partial,0.0
+R182,Q10,It gives every program its own isolated memory address space.,partial,correct,partial,incorrect,0.044872781005980335
+R183,Q10,Virtual memory prevents out of memory errors.,partial,correct,correct,incorrect,0.19876736913371384
+R184,Q10,Virtual memory is cloud storage like Google Drive or Dropbox.,incorrect,correct,correct,incorrect,0.1616955692358037
+R185,Q10,It is saving your files to OneDrive across the internet.,incorrect,correct,incorrect,partial,0.011929432834091765
+R186,Q10,Virtual memory is a type of GPU VRAM used only for rendering 3D graphics.,incorrect,correct,correct,incorrect,0.16807062878352189
+R187,Q10,It physically replaces the RAM stick inside the motherboard.,incorrect,correct,partial,partial,0.04832883091920586
+R188,Q10,Virtual memory does not allow running programs larger than RAM.,incorrect,correct,correct,partial,0.3288728053047631
+R189,Q10,It is a technique that deletes unused operating system files to save disk.,incorrect,correct,incorrect,partial,0.01079587507431181
+R191,Q11,A deadlock is a situation where two or more processes are permanently blocked because each is holding a resource while waiting for a resource held by another.,correct,correct,correct,correct,0.8650420816834564
+R192,Q11,"It happens when processes get stuck in a circular wait condition, where Process A holds Resource 1 and wants Resource 2, while Process B holds Resource 2 and wants Resource 1.",correct,correct,partial,correct,0.10483272734925236
+R193,Q11,A deadlock occurs when concurrent processes cannot proceed because they are mutually waiting for resources locked by one another.,correct,correct,correct,correct,0.47493688751727503
+R194,Q11,It is a permanent stall in execution where multiple threads hold locks that other threads need to continue.,correct,correct,incorrect,correct,0.010637842559997451
+R195,Q11,Processes stuck forever because each has a lock the other needs.,correct,correct,correct,incorrect,0.2115789444208577
+R196,Q11,Mutual blocking where process 1 waits for process 2 and process 2 waits for process 1.,correct,correct,partial,incorrect,0.04169142992145716
+R197,Q11,It is when a computer or program completely freezes.,partial,correct,correct,partial,0.0706702235147957
+R198,Q11,A deadlock means the operating system stops responding.,partial,correct,correct,partial,0.06209228764708016
+R199,Q11,It happens when a process waits for a resource for too long.,partial,correct,correct,incorrect,0.19775836742063993
+R200,Q11,Two threads try to access the same variable at the same time.,partial,correct,partial,incorrect,0.041312679040775666
+R201,Q11,It is caused by circular wait in operating systems.,partial,correct,partial,partial,0.0492018849339554
+R202,Q11,Deadlock involves mutual exclusion and hold and wait.,partial,correct,partial,partial,0.05783253626214253
+R203,Q11,A deadlock is when the CPU battery dies or power is unplugged.,incorrect,correct,partial,incorrect,0.12146856083316425
+R204,Q11,It is an infinite loop like while(true) written by a bad programmer.,incorrect,correct,partial,incorrect,0.06521976883488657
+R205,Q11,Deadlock is a security attack where a hacker steals user passwords.,incorrect,correct,partial,incorrect,0.055667742080871545
+R206,Q11,It is a virus that deletes files from the hard drive.,incorrect,correct,incorrect,incorrect,0.01102079657954604
+R207,Q11,Deadlock allows all processes to finish execution immediately.,incorrect,correct,partial,partial,0.12765315312095238
+R208,Q11,A deadlock speeds up memory access by 50 percent.,incorrect,correct,partial,incorrect,0.09504717136374322
+R210,Q12,"A primary key uniquely identifies each record in its table and cannot be null, while a foreign key references a primary key in another table to establish relationships.",correct,correct,correct,correct,0.8943299867068426
+R211,Q12,A primary key ensures entity uniqueness within a table; a foreign key links rows in one table to the primary key of another table for referential integrity.,correct,correct,correct,correct,0.4042960638998021
+R212,Q12,Primary key = unique identifier for rows in the table. Foreign key = points to a primary key in another table to connect them.,correct,correct,correct,correct,0.4612732556007781
+R213,Q12,"The primary key must have unique, non-empty values per row. A foreign key holds values matching the target table's primary key to link data.",correct,correct,correct,correct,0.3069331489624269
+R214,Q12,Primary key enforces uniqueness in the parent table; foreign key references it in the child table to join them.,correct,correct,correct,correct,0.4305467833699394
+R215,Q12,PK identifies rows uniquely; FK creates relations between tables by referencing a PK.,correct,correct,correct,partial,0.10785710832906226
+R216,Q12,A primary key uniquely identifies every row in a table.,partial,correct,correct,partial,0.42514928624977777
+R217,Q12,Primary key cannot have duplicate values or null values.,partial,correct,correct,partial,0.21057631649449787
+R218,Q12,A foreign key connects two tables together in a relational database.,partial,correct,correct,partial,0.21367570850759604
+R219,Q12,Foreign key points to another table.,partial,correct,correct,partial,0.2717374156055089
+R220,Q12,Both are keys used in SQL databases for columns.,partial,correct,partial,partial,0.036168137020714385
+R221,Q12,They are used when writing SELECT JOIN queries.,partial,correct,incorrect,partial,0.0
+R222,Q12,A foreign key must be unique and a primary key can have duplicate nulls.,incorrect,correct,correct,incorrect,0.2455883342968864
+R223,Q12,Foreign keys cannot be duplicated and primary keys can be anything.,incorrect,correct,correct,partial,0.07962844583431958
+R224,Q12,Primary key encrypts table data and foreign key decrypts it for users.,incorrect,correct,correct,partial,0.31426943069802554
+R225,Q12,A foreign key is a key from a database located in another country.,incorrect,correct,correct,partial,0.360228032610506
+R226,Q12,There is no difference between primary key and foreign key in SQL.,incorrect,correct,correct,partial,0.26864596923519896
+R227,Q12,Primary keys are stored on USB flash drives.,incorrect,correct,partial,partial,0.0873412880999332
+R229,Q13,"Atomicity means all operations in a database transaction succeed completely or none do; if any part fails, the entire transaction is rolled back.",correct,correct,correct,correct,0.37053623104177325
+R230,Q13,"It is the all-or-nothing property: either all SQL statements in the transaction commit, or everything is undone leaving the database unchanged.",correct,correct,partial,correct,0.13838432209493876
+R231,Q13,"Atomicity guarantees that a transaction cannot be partially completed. If a bank transfer fails halfway, neither account changes.",correct,correct,partial,correct,0.10706353011391569
+R232,Q13,It treats the whole transaction as a single indivisible unit of work that either completes entirely or aborts with rollback.,correct,correct,partial,correct,0.07793661216049655
+R233,Q13,All-or-nothing execution of transaction steps with complete rollback on errors.,correct,correct,partial,partial,0.12883533035760622
+R234,Q13,Atomicity means either every query in the transaction works or none of them apply.,correct,correct,correct,correct,0.1851430756520877
+R235,Q13,It means all or nothing.,partial,correct,partial,partial,0.09113182535107589
+R236,Q13,"If it fails, it rolls back.",partial,correct,partial,partial,0.05667046399341562
+R237,Q13,Atomicity means transactions are indivisible.,partial,correct,partial,partial,0.052371520578520646
+R238,Q13,It ensures database consistency during banking transactions.,partial,correct,partial,incorrect,0.08067205437294855
+R239,Q13,Transactions execute very fast at the atomic level.,partial,correct,correct,incorrect,0.17064420343858466
+R240,Q13,It locks tables during execution.,partial,correct,incorrect,partial,0.0
+R241,Q13,Atomicity means splitting atoms in nuclear physics inside computers.,incorrect,correct,correct,incorrect,0.07892119520148805
+R242,Q13,It relates to quantum computing particles.,incorrect,correct,incorrect,partial,0.0
+R243,Q13,Atomicity allows transactions to partially complete so you do not lose progress.,incorrect,correct,partial,incorrect,0.037732951706222054
+R244,Q13,"If three queries work and one fails, atomicity keeps the three queries saved.",incorrect,correct,partial,partial,0.038833347697665534
+R245,Q13,Atomicity means creating automatic backups every night at midnight.,incorrect,correct,partial,incorrect,0.10252914707162417
+R246,Q13,It automatically generates primary keys for tables.,incorrect,correct,incorrect,partial,0.0
+R248,Q14,The purpose of a database index is to speed up data retrieval queries by using a data structure like a B-tree to avoid scanning the entire table.,correct,correct,correct,correct,0.21771180091954886
+R249,Q14,An index organizes pointers to rows in sorted order so the database can locate requested records rapidly without examining every row.,correct,correct,correct,correct,0.10896649895770391
+R250,Q14,"It works like an index at the back of a book, allowing the DBMS to find rows matching WHERE clauses much faster than a full sequential scan.",correct,correct,partial,correct,0.14052243116425842
+R251,Q14,Indexes reduce disk I/O and query execution time by providing fast lookups instead of doing expensive table scans.,correct,correct,partial,correct,0.12872797113571566
+R252,Q14,Speeds up SELECT queries by creating lookup data structures on indexed columns.,correct,correct,correct,partial,0.1566704980440559
+R253,Q14,Fast searching of records without scanning all table rows sequentially.,correct,correct,partial,incorrect,0.09312738650277735
+R254,Q14,An index makes queries run faster.,partial,correct,partial,partial,0.08620806312057291
+R255,Q14,It optimizes the database performance.,partial,correct,partial,partial,0.07209804754433874
+R256,Q14,It is like an index in a textbook.,partial,correct,partial,incorrect,0.08121767210482668
+R257,Q14,It creates a B-Tree.,partial,correct,partial,partial,0.07756351421985742
+R258,Q14,It sorts the table columns alphabetically.,partial,correct,partial,partial,0.06243246881587858
+R259,Q14,Indexes are used on foreign key columns.,partial,correct,incorrect,partial,0.0
+R260,Q14,An index is used to compress the database so it takes zero hard drive space.,incorrect,correct,partial,incorrect,0.07698942435944348
+R261,Q14,Indexes prevent users from seeing private passwords.,incorrect,correct,incorrect,partial,0.0
+R262,Q14,An index slows down search queries so the CPU does not overheat.,incorrect,correct,correct,incorrect,0.056838206945834156
+R263,Q14,Indexes are required to delete tables from MySQL.,incorrect,correct,incorrect,partial,0.0
+R264,Q14,An index physically deletes all duplicate data in the database.,incorrect,correct,correct,incorrect,0.10771658884766162
+R265,Q14,It is a network cable connecting database servers.,incorrect,correct,partial,incorrect,0.04652041104765156
+R267,Q15,"Database normalization is the process of organizing tables and attributes to minimize data redundancy and prevent insertion, update, and deletion anomalies.",correct,correct,correct,correct,0.42613700321992026
+R268,Q15,It structures a relational database into multiple related tables to reduce duplicate data and ensure data integrity across transactions.,correct,correct,correct,correct,0.24405424752959104
+R269,Q15,Normalization decomposes large unorganized tables into smaller well-structured tables to eliminate update anomalies and unnecessary repetition.,correct,correct,correct,correct,0.39510137912968085
+R270,Q15,"It applies normal forms like 1NF, 2NF, and 3NF to avoid redundant columns and prevent data inconsistency when records are modified.",correct,correct,correct,correct,0.054536585316984514
+R271,Q15,Organizing database schemas to eliminate duplicate data and prevent modification anomalies.,correct,correct,correct,correct,0.20969414886434343
+R272,Q15,Reduces data duplication and ensures dependencies make logical sense across tables.,correct,correct,partial,correct,0.10455495262558061
+R273,Q15,It reduces duplicate data in the database.,partial,correct,correct,partial,0.0655261450624787
+R274,Q15,Normalization gets rid of redundant columns.,partial,correct,correct,incorrect,0.10212735152454526
+R275,Q15,It divides one big table into smaller tables.,partial,correct,partial,incorrect,0.04820228703624312
+R276,Q15,"It puts data into 1NF, 2NF, and 3NF.",partial,correct,partial,incorrect,0.049861113783116084
+R277,Q15,It prevents anomalies when deleting records.,partial,correct,partial,partial,0.0884933546855092
+R278,Q15,Normalization makes the database clean and organized.,partial,correct,partial,incorrect,0.14836140390120306
+R279,Q15,Normalization is converting numbers between 0 and 1 in neural networks.,incorrect,correct,partial,incorrect,0.10410858251463335
+R280,Q15,It scales feature vectors using min-max normalization.,incorrect,correct,partial,incorrect,0.12094114547167295
+R281,Q15,Normalization duplicates tables multiple times to make backups in case of crash.,incorrect,correct,partial,correct,0.11610230191477694
+R282,Q15,It combines every table into one giant single table with 100 columns.,incorrect,correct,incorrect,correct,0.0
+R283,Q15,Normalization is a security algorithm that hashes user passwords.,incorrect,correct,correct,incorrect,0.050175312193926194
+R284,Q15,It translates SQL queries into Python code automatically.,incorrect,correct,incorrect,incorrect,0.0
