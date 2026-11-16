@@ -43,5 +43,95 @@
     "correct": "Covers both required points without a major factual error.",
     "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
     "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+  },
+  "Q6": {
+    "key_points": [
+      "IP address is a logical Layer 3 address used for routing",
+      "MAC address is a physical Layer 2 hardware address for local delivery"
+    ],
+    "correct": "Explains both the logical/routing nature of IP and physical/hardware nature of MAC.",
+    "partial": "Defines only IP address or only MAC address correctly.",
+    "incorrect": "Contains major factual misconceptions, confuses layers, or states they are identical."
+  },
+  "Q7": {
+    "key_points": [
+      "Acts as an exit point or router for the local host",
+      "Forwards packets to external or remote networks"
+    ],
+    "correct": "Mentions that it is the router/gateway that handles traffic outside the local network.",
+    "partial": "States it connects to internet or is an IP address without explaining forwarding for external traffic.",
+    "incorrect": "Confuses gateway with DNS, DHCP, or local switch."
+  },
+  "Q8": {
+    "key_points": [
+      "HTTP transmits data unencrypted in plain text",
+      "HTTPS uses SSL/TLS encryption for secure communication"
+    ],
+    "correct": "Mentions both HTTP being plain text/unencrypted and HTTPS using encryption (SSL/TLS).",
+    "partial": "Only mentions HTTPS is secure without explaining encryption vs plain text.",
+    "incorrect": "Claims HTTP is faster due to compression or confuses with hardware protocol."
+  },
+  "Q9": {
+    "key_points": [
+      "Process has its own independent address space and resources",
+      "Thread is a lightweight unit sharing memory within the same process"
+    ],
+    "correct": "Distinguishes independent process memory vs shared thread memory within a process.",
+    "partial": "Mentions threads are lightweight without explaining shared vs separate memory.",
+    "incorrect": "Claims threads have separate memory spaces or confuses with CPU cores."
+  },
+  "Q10": {
+    "key_points": [
+      "Uses secondary storage/disk as an extension of RAM",
+      "Allows running programs larger than physical RAM and provides isolation"
+    ],
+    "correct": "Mentions using disk as RAM extension and running larger programs / isolation.",
+    "partial": "Mentions only paging or extra memory without explaining secondary storage extension.",
+    "incorrect": "Confuses virtual memory with cloud storage or CPU cache."
+  },
+  "Q11": {
+    "key_points": [
+      "Two or more processes are permanently blocked or waiting",
+      "Each process holds a resource needed by another in a circular wait"
+    ],
+    "correct": "Mentions processes blocked waiting for resources held by each other.",
+    "partial": "Describes system freeze or waiting without mentioning circular resource holding.",
+    "incorrect": "Claims deadlock is a CPU hardware crash or infinite loop in code."
+  },
+  "Q12": {
+    "key_points": [
+      "Primary key uniquely identifies records in a table and cannot be null",
+      "Foreign key references a primary key in another table to establish relationships"
+    ],
+    "correct": "Identifies uniqueness of primary key and relational reference of foreign key.",
+    "partial": "Defines only primary key or only foreign key.",
+    "incorrect": "Claims primary key connects tables and foreign key is unique in its own table."
+  },
+  "Q13": {
+    "key_points": [
+      "All operations in a transaction succeed completely or none do (all-or-nothing)",
+      "Rolls back all changes if any part of the transaction fails"
+    ],
+    "correct": "Clearly states the all-or-nothing execution rule and rollback on failure.",
+    "partial": "Mentions atomic means small or fast without the all-or-nothing rule.",
+    "incorrect": "Confuses atomicity with data isolation or thread locking."
+  },
+  "Q14": {
+    "key_points": [
+      "Speeds up data retrieval queries",
+      "Uses an organized data structure to avoid full table scans"
+    ],
+    "correct": "States faster lookup and avoiding full sequential table scans.",
+    "partial": "Mentions it helps find data faster without explaining indexing structure/scanning.",
+    "incorrect": "Claims index compresses data or prevents duplicate rows."
+  },
+  "Q15": {
+    "key_points": [
+      "Reduces data redundancy and duplicate storage",
+      "Prevents insertion, update, and deletion anomalies"
+    ],
+    "correct": "Mentions reducing redundancy and eliminating modification anomalies.",
+    "partial": "States it cleans tables or splits data without explaining redundancy or anomalies.",
+    "incorrect": "Confuses normalization with data encryption or indexing."
   }
 }
