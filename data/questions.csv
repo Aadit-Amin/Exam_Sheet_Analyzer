@@ -4,3 +4,13 @@ Q2,What is the purpose of DNS?,DNS resolves domain names into IP addresses so de
 Q3,How do acknowledgements and retransmissions help TCP provide reliable delivery?,"Acknowledgements confirm received data, and retransmissions recover data that was not acknowledged.",Transport protocols
 Q4,What is the purpose of a router?,A router forwards packets between different networks using routing information to select the next hop.,Routing
 Q5,What is a VLAN?,A VLAN logically groups switch ports or devices into a separate Layer 2 broadcast domain.,Switching
+Q6,What is the difference between an IP address and a MAC address?,"An IP address is a logical Layer 3 address used for routing across networks, whereas a MAC address is a physical Layer 2 address assigned to hardware for local delivery.",Addressing
+Q7,What is the purpose of a default gateway?,A default gateway is a router interface that forwards packets destined for remote networks when no specific local route exists.,Routing
+Q8,What is the main difference between HTTP and HTTPS?,"HTTP transmits data unencrypted in plain text, while HTTPS uses SSL/TLS encryption to protect privacy and integrity.",Application protocols
+Q9,What is the difference between a process and a thread?,"A process is an independent program execution with its own dedicated memory space, whereas a thread is a lightweight execution unit inside a process that shares memory.",Process management
+Q10,What is virtual memory and what problem does it solve?,"Virtual memory uses secondary storage as an extension of RAM, enabling systems to execute programs larger than physical memory while providing memory isolation.",Memory management
+Q11,What is a deadlock in an operating system?,A deadlock occurs when two or more processes are permanently blocked because each is waiting for a resource held by another.,Concurrency
+Q12,What is the difference between a primary key and a foreign key?,"A primary key uniquely identifies each record in its table, while a foreign key references a primary key in another table to establish relationships.",Database design
+Q13,What does Atomicity mean in ACID database transactions?,"Atomicity ensures that all operations in a transaction execute completely or none execute at all, rolling back on any failure.",Database transactions
+Q14,What is the purpose of a database index?,A database index creates an organized data structure that speeds up query lookups without performing a full table scan.,Database performance
+Q15,What is database normalization?,Database normalization organizes tables and relations to reduce data redundancy and eliminate update anomalies.,Database design
