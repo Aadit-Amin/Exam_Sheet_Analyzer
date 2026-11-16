@@ -1,0 +1,6 @@
+question_id,question,model_answer,topic
+Q1,What is the purpose of a subnet mask?,A subnet mask identifies the network and host portions of an IP address.,IP addressing
+Q2,What is the purpose of DNS?,DNS resolves domain names into IP addresses so devices can locate the corresponding hosts.,Application protocols
+Q3,How do acknowledgements and retransmissions help TCP provide reliable delivery?,"Acknowledgements confirm received data, and retransmissions recover data that was not acknowledged.",Transport protocols
+Q4,What is the purpose of a router?,A router forwards packets between different networks using routing information to select the next hop.,Routing
+Q5,What is a VLAN?,A VLAN logically groups switch ports or devices into a separate Layer 2 broadcast domain.,Switching

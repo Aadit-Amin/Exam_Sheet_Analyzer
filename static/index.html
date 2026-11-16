@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Answer Sheet Analyzer</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; color: #222; line-height: 1.5; }
+  h1 { margin-bottom: 0.25rem; }
+  h2 { margin-top: 2.5rem; border-bottom: 1px solid #ccc; padding-bottom: 0.25rem; }
+  .note { color: #555; margin-top: 0; }
+  label { display: block; margin-top: 1rem; font-weight: 600; }
+  select, textarea, button { font: inherit; }
+  select, textarea { width: 100%; padding: 0.5rem; box-sizing: border-box; }
+  button { margin-top: 1rem; padding: 0.5rem 1.2rem; cursor: pointer; }
+  table { border-collapse: collapse; width: 100%; margin-top: 1rem; font-size: 0.95rem; }
+  th, td { border: 1px solid #ccc; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+  th { background: #f2f2f2; }
+  .correct { color: #1a7f37; font-weight: 600; }
+  .partial { color: #b35900; font-weight: 600; }
+  .incorrect { color: #c62828; font-weight: 600; }
+  .blank { color: #666; }
+  .error { color: #c62828; margin-top: 1rem; }
+  .scroll { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h1>Answer sheet analyzer</h1>
+<p class="note">Suggests correct, partial or incorrect by comparing answers with the model answer and key points. Suggestions are not final grades.</p>
+
+<h2>Check one answer</h2>
+<label for="question">Question</label>
+<select id="question"></select>
+
+<label for="answer">Student answer</label>
+<textarea id="answer" rows="4"></textarea>
+
+<button onclick="checkAnswer()">Check answer</button>
+<div id="single-result"></div>
+
+<h2>Analyze a CSV of answers</h2>
+<p class="note">Columns needed: response_id, question_id, student_answer.</p>
+<input type="file" id="csv-file" accept=".csv">
+<br>
+<button onclick="analyzeFile()">Analyze file</button>
+<div id="batch-result"></div>
+
+<script>
+// ---------- helpers ----------
+function show(id, html) {
+  document.getElementById(id).innerHTML = html;
+}
+
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function showError(id, message) {
+  show(id, '<p class="error">' + escapeHtml(message) + '</p>');
+}
+
+async function postJson(url, body) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.detail || "Request failed");
+  }
+  return data;
+}
+
+function table(headers, rows) {
+  let html = '<div class="scroll"><table><tr>';
+  for (const h of headers) html += "<th>" + h + "</th>";
+  html += "</tr>";
+  for (const row of rows) {
+    html += "<tr>";
+    for (const cell of row) html += "<td>" + cell + "</td>";
+    html += "</tr>";
+  }
+  return html + "</table></div>";
+}
+
+function labelSpan(label) {
+  return '<span class="' + label + '">' + label + "</span>";
+}
+
+// ---------- load the question list ----------
+async function loadQuestions() {
+  const response = await fetch("/api/questions");
+  const questions = await response.json();
+  const select = document.getElementById("question");
+  for (const q of questions) {
+    const option = document.createElement("option");
+    option.value = q.question_id;
+    option.textContent = q.question_id + ": " + q.question;
+    select.appendChild(option);
+  }
+}
+
+// ---------- check one answer ----------
+async function checkAnswer() {
+  const questionId = document.getElementById("question").value;
+  const answer = document.getElementById("answer").value;
+  try {
+    const result = await postJson("/api/predict", { question_id: questionId, answer: answer });
+    let html = "<p>Suggested label: " + labelSpan(result.label) + "</p>";
+    if (result.label === "blank") {
+      html += "<p class='note'>The answer is empty, so it was not graded.</p>";
+    } else {
+      const rows = result.key_points.map(k => [
+        escapeHtml(k.key_point), k.similarity, escapeHtml(k.matched_text)
+      ]);
+      html += "<p>Similarity to model answer: " + result.features.reference_similarity + "</p>";
+      html += table(["Key point", "Best match score", "Matching text"], rows);
+    }
+    show("single-result", html);
+  } catch (error) {
+    showError("single-result", error.message);
+  }
+}
+
+// ---------- analyze a CSV ----------
+async function analyzeFile() {
+  const file = document.getElementById("csv-file").files[0];
+  if (!file) {
+    showError("batch-result", "Choose a CSV file first.");
+    return;
+  }
+  const text = await file.text();
+  try {
+    const result = await postJson("/api/analyze", { csv_text: text });
+
+    let html = "<h3>By question (weakest first)</h3>";
+    html += table(
+      ["Question", "Correct", "Partial", "Incorrect", "Blank", "Not fully correct %"],
+      result.by_question.map(r => [r.question_id, r.correct, r.partial, r.incorrect, r.blank, r.not_fully_correct_pct ?? "-"])
+    );
+
+    html += "<h3>By topic</h3>";
+    html += table(
+      ["Topic", "Correct", "Partial", "Incorrect", "Blank", "Not fully correct %"],
+      result.by_topic.map(r => [escapeHtml(r.topic), r.correct, r.partial, r.incorrect, r.blank, r.not_fully_correct_pct ?? "-"])
+    );
+
+    html += "<h3>Recurring mistakes</h3>";
+    html += "<p class='note'>Wrong or partial answers with similar wording, grouped within each question. Similar wording does not always mean the same misconception, so read the examples.</p>";
+    if (result.mistake_groups.length === 0) {
+      html += "<p>No groups of similar wrong answers found.</p>";
+    } else {
+      html += table(
+        ["Question", "Answers in group", "% of wrong answers", "Examples"],
+        result.mistake_groups.map(g => [g.question_id, g.count, g.share_of_wrong_answers_pct, g.examples.map(escapeHtml).join("<br>")])
+      );
+    }
+
+    html += "<h3>Each answer</h3>";
+    html += table(
+      ["Response", "Question", "Answer", "Suggested label"],
+      result.responses.map(r => [escapeHtml(r.response_id), r.question_id, escapeHtml(r.student_answer), labelSpan(r.predicted_label)])
+    );
+    show("batch-result", html);
+  } catch (error) {
+    showError("batch-result", error.message);
+  }
+}
+
+loadQuestions();
+</script>
+</body>
+</html>

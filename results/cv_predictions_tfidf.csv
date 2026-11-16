@@ -1,0 +1,91 @@
+response_id,question_id,student_answer,label,majority,similarity_threshold,classifier,reference_similarity
+R001,Q1,It separates an IP address into the network and host parts.,correct,correct,correct,correct,0.5886245224548321
+R002,Q1,The mask tells which bits belong to the network and which identify the host.,correct,correct,correct,correct,0.24377856706166504
+R003,Q1,A subnet mask marks the network prefix and the remaining host portion.,correct,correct,correct,correct,0.3960443864493167
+R004,Q1,It defines the boundary between network bits and host bits in an IP address.,correct,correct,correct,correct,0.3360733169567732
+R005,Q1,"With a /24 mask, the first 24 bits identify the network and the other 8 bits are the host part of an IPv4 address.",correct,correct,correct,correct,0.3858519614484018
+R006,Q1,"For IPv4, 255.255.255.0 indicates a 24-bit network part and an 8-bit host part.",correct,correct,correct,correct,0.2743690168619122
+R007,Q1,It identifies the network portion of an IP address.,partial,correct,correct,partial,0.4818098927218623
+R008,Q1,It shows which bits represent the network.,partial,correct,correct,partial,0.14721348955397143
+R009,Q1,It identifies the host portion of an IP address.,partial,correct,correct,partial,0.44826644163345253
+R010,Q1,The mask tells us which bits are available for host identifiers.,partial,correct,partial,incorrect,0.10288909251222832
+R011,Q1,It helps determine whether an IP destination is on the local subnet.,partial,correct,correct,correct,0.20931089210560627
+R012,Q1,A device uses it when checking whether a destination belongs to its subnet.,partial,correct,partial,correct,0.08164020345338091
+R013,Q1,It encrypts an IP address so nobody can read it.,incorrect,correct,correct,partial,0.23063791972452224
+R014,Q1,A subnet mask keeps the address secret by encryption.,incorrect,correct,correct,incorrect,0.33671561087765045
+R015,Q1,It automatically gives every computer a new IP address.,incorrect,correct,correct,partial,0.1580299520199797
+R016,Q1,The mask allocates IP addresses when devices join the network.,incorrect,correct,correct,incorrect,0.22074083396029576
+R017,Q1,A subnet mask does not distinguish network bits from host bits.,incorrect,correct,correct,correct,0.22775319282417578
+R018,Q1,The network and host portions cannot be identified using a subnet mask.,incorrect,correct,correct,correct,0.6576140408516622
+R020,Q2,DNS translates domain names into IP addresses.,correct,correct,correct,incorrect,0.4621978409000341
+R021,Q2,It maps a host name to its corresponding IP address.,correct,correct,partial,partial,0.10644951756587843
+R022,Q2,"When I type example.com, DNS can return the IP address used to reach that host.",correct,correct,partial,correct,0.16089037878457654
+R023,Q2,It lets a computer find an IP address from a website name such as example.com.,correct,correct,incorrect,correct,0.019354202220798766
+R024,Q2,DNS provides name resolution: a domain is looked up to obtain its numerical IP address.,correct,correct,correct,correct,0.12036499113175725
+R025,Q2,It resolves human-readable domain names to the Internet Protocol addresses of hosts.,correct,correct,correct,correct,0.304506158491536
+R026,Q2,DNS is a naming service used on the internet.,partial,correct,incorrect,incorrect,0.07473573623952462
+R027,Q2,It manages domain-name information.,partial,correct,incorrect,partial,0.0530204730387448
+R028,Q2,It helps us locate websites using their names.,partial,correct,correct,incorrect,0.14712949241027073
+R029,Q2,"It lets users access a site by its name, but I cannot explain the lookup.",partial,correct,incorrect,correct,0.017748918323104518
+R030,Q2,It can tell a sender which mail server handles a domain.,partial,correct,partial,incorrect,0.07788615445355905
+R031,Q2,One use is looking up a domain's mail exchanger.,partial,correct,incorrect,partial,0.04214804564636924
+R032,Q2,DNS assigns IP addresses to newly connected computers.,incorrect,correct,correct,incorrect,0.2863544225391631
+R033,Q2,It leases an IP address to each device joining Wi-Fi.,incorrect,correct,incorrect,partial,0.02802544535883803
+R034,Q2,DNS translates website names into MAC addresses.,incorrect,correct,correct,incorrect,0.23727919138100215
+R035,Q2,It resolves domain names directly to Ethernet hardware addresses.,incorrect,correct,correct,correct,0.3299476755628325
+R036,Q2,DNS does not translate domain names into IP addresses.,incorrect,correct,correct,incorrect,0.43222594087410127
+R037,Q2,DNS cannot resolve a host name to its IP address.,incorrect,correct,partial,partial,0.08354729380686618
+R039,Q3,"The receiver acknowledges data, and the sender resends data if acknowledgement is missing.",correct,correct,correct,correct,0.17095281383763544
+R040,Q3,TCP confirms receipt with ACKs and retransmits data that has not been acknowledged.,correct,correct,correct,correct,0.3375882972380898
+R041,Q3,Acknowledgements tell the sender what arrived. A timeout can cause missing data to be sent again.,correct,correct,partial,correct,0.10718182423933281
+R042,Q3,"An ACK reports receipt, while retransmission after a timeout helps recover lost data.",correct,correct,correct,correct,0.15370721351699462
+R043,Q3,"TCP uses ACKs to track delivered bytes and retransmits segments believed lost, for example after duplicate ACKs.",correct,correct,incorrect,correct,0.026276558759892994
+R044,Q3,Received data is acknowledged; missing segments can be resent after duplicate acknowledgements indicate a gap.,correct,correct,correct,correct,0.30584309712781527
+R045,Q3,TCP uses acknowledgements to confirm that data was received.,partial,correct,correct,correct,0.41320203284141194
+R046,Q3,The receiving device sends ACKs when it receives data.,partial,correct,partial,partial,0.0816627601368545
+R047,Q3,Lost data is transmitted again.,partial,correct,partial,incorrect,0.08169265336891426
+R048,Q3,TCP retransmits segments when it detects a loss.,partial,correct,incorrect,incorrect,0.0
+R049,Q3,Sequence numbers allow TCP to put received data back in order.,partial,correct,correct,correct,0.2817069428773408
+R050,Q3,TCP numbers bytes so the receiver can reconstruct their order.,partial,correct,incorrect,incorrect,0.0
+R051,Q3,TCP never retransmits lost data.,incorrect,correct,correct,partial,0.0750243990770046
+R052,Q3,If a TCP packet is lost it is permanently discarded without a retry.,incorrect,correct,incorrect,correct,0.0
+R053,Q3,Acknowledgements encrypt the data and retransmissions decrypt it.,incorrect,correct,correct,incorrect,0.4774670724833647
+R054,Q3,"ACKs provide encryption, and resending performs decryption.",incorrect,correct,incorrect,partial,0.048870485301800964
+R055,Q3,"TCP prevents all packet loss, so acknowledgements are unnecessary.",incorrect,correct,partial,partial,0.05833346731295046
+R056,Q3,Every TCP packet is guaranteed never to be lost in the network.,incorrect,correct,incorrect,correct,0.0
+R058,Q4,A router connects different networks and uses a routing table to decide where packets go next.,correct,correct,correct,correct,0.2660340286796815
+R059,Q4,It forwards packets between networks by looking up the next hop in routing information.,correct,correct,correct,correct,0.5882634343645144
+R060,Q4,It examines a packet's destination IP address and its routing table to forward the packet towards another network.,correct,correct,partial,correct,0.059991213104927554
+R061,Q4,"Routers deliver packets across networks, selecting an outgoing route using the destination address.",correct,correct,correct,correct,0.15562870726787484
+R062,Q4,It can send LAN traffic towards a remote network using a matching route or default route.,correct,correct,incorrect,correct,0.04906806838000982
+R063,Q4,A router forwards traffic from one network to another through the next hop selected by a route.,correct,correct,correct,correct,0.3406532458345938
+R064,Q4,It connects different networks.,partial,correct,correct,partial,0.21221972179123713
+R065,Q4,It forwards packets from one network to another.,partial,correct,correct,partial,0.15867524943095257
+R066,Q4,It chooses a next hop using its routing table.,partial,correct,correct,incorrect,0.30691055967906067
+R067,Q4,It looks up destination routes to decide where to send packets.,partial,correct,partial,partial,0.08335064098769283
+R068,Q4,It can provide the default gateway for a computer.,partial,correct,incorrect,incorrect,0.018639174032053767
+R069,Q4,A router is often the gateway used by devices on a LAN.,partial,correct,partial,incorrect,0.08927792632528912
+R070,Q4,A router can only connect devices within the same network and cannot connect separate networks.,incorrect,correct,partial,correct,0.1114721205314832
+R071,Q4,Routers are unable to forward packets between different IP networks.,incorrect,correct,correct,correct,0.3312408691653393
+R072,Q4,A router translates all domain names into IP addresses as its main routing function.,incorrect,correct,correct,correct,0.0904840007678578
+R073,Q4,Its routing table is a list of website names that it translates into IP addresses.,incorrect,correct,partial,correct,0.03931603534401918
+R074,Q4,It forwards every packet out of every interface regardless of the destination.,incorrect,correct,incorrect,incorrect,0.06818373928800853
+R075,Q4,Routers always broadcast incoming IP packets to all attached networks.,incorrect,correct,correct,partial,0.14705084109684963
+R077,Q5,A VLAN logically divides a switched network into separate broadcast domains.,correct,correct,correct,incorrect,0.497456241925923
+R078,Q5,It groups switch ports logically so each VLAN forms its own Layer 2 broadcast domain.,correct,correct,correct,correct,0.5334779375593811
+R079,Q5,"Devices can be placed in logical groups on switches, with broadcasts confined to their VLAN.",correct,correct,correct,correct,0.12894592409381556
+R080,Q5,A VLAN is a logical set of ports or devices whose Layer 2 broadcasts are isolated from other VLANs.,correct,correct,correct,correct,0.40094513760377026
+R081,Q5,"One physical switch can support multiple logical LANs, each with a separate broadcast domain.",correct,correct,correct,correct,0.20764587018928157
+R082,Q5,VLANs create logical LAN groups on switching equipment and separate their broadcast traffic.,correct,correct,correct,correct,0.15486516126615518
+R083,Q5,A VLAN is a logical grouping of devices on a switch.,partial,correct,correct,incorrect,0.1766272646628657
+R084,Q5,It groups switch ports into virtual LANs.,partial,correct,correct,incorrect,0.3524118321868497
+R085,Q5,A VLAN creates a separate broadcast domain.,partial,correct,correct,partial,0.2824350500240869
+R086,Q5,Broadcasts stay within their VLAN.,partial,correct,partial,partial,0.06188001242380193
+R087,Q5,VLANs can separate departments using the same switching infrastructure.,partial,correct,incorrect,partial,0.046991129373832506
+R088,Q5,They help keep different departments' network traffic separated.,partial,correct,incorrect,partial,0.0
+R089,Q5,A VLAN automatically encrypts all Ethernet traffic.,incorrect,correct,incorrect,partial,0.05733575246596591
+R090,Q5,VLANs are encryption protocols for switch traffic.,incorrect,correct,incorrect,partial,0.05716420682540024
+R091,Q5,Every VLAN must use its own physically separate switch.,incorrect,correct,partial,incorrect,0.1580827649895575
+R092,Q5,Two VLANs can never exist on the same physical switch.,incorrect,correct,incorrect,incorrect,0.040989621938141686
+R093,Q5,VLANs combine all switch ports into one shared broadcast domain.,incorrect,correct,correct,incorrect,0.37639676415586304
+R094,Q5,Broadcasts always pass freely between different VLANs.,incorrect,correct,incorrect,partial,0.0

@@ -1,0 +1,47 @@
+{
+  "Q1": {
+    "key_points": [
+      "Identifies the network portion of an IP address",
+      "Identifies the host portion of an IP address"
+    ],
+    "correct": "Covers both required points without a major factual error.",
+    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
+    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+  },
+  "Q2": {
+    "key_points": [
+      "Resolves domain names",
+      "Finds the corresponding IP address"
+    ],
+    "correct": "Covers both required points without a major factual error.",
+    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
+    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+  },
+  "Q3": {
+    "key_points": [
+      "Acknowledgements confirm receipt of data",
+      "Retransmissions recover missing or unacknowledged data"
+    ],
+    "correct": "Covers both required points without a major factual error.",
+    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
+    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+  },
+  "Q4": {
+    "key_points": [
+      "Forwards packets between different networks",
+      "Uses routing information to select a next hop"
+    ],
+    "correct": "Covers both required points without a major factual error.",
+    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
+    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+  },
+  "Q5": {
+    "key_points": [
+      "Logically groups switch ports or devices",
+      "Creates a separate Layer 2 broadcast domain"
+    ],
+    "correct": "Covers both required points without a major factual error.",
+    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
+    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+  }
+}
