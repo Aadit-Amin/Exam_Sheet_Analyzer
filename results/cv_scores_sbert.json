@@ -1,25 +1,25 @@
 {
   "backend": "sbert",
   "macro_f1": {
-    "majority": 0.16666666666666666,
-    "similarity_threshold": 0.47716368844188395,
-    "classifier": 0.6883894450331686
+    "majority": 0.3209090909090909,
+    "similarity_threshold": 0.578016185570389,
+    "classifier": 0.6816399816399815
   },
   "confusion_matrix": [
     [
-      53,
-      30,
-      7
+      126,
+      88,
+      36
     ],
     [
-      29,
-      55,
-      6
+      75,
+      166,
+      9
     ],
     [
-      7,
-      5,
-      78
+      11,
+      16,
+      223
     ]
   ],
   "labels": [

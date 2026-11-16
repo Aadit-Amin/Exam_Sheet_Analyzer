@@ -4,134 +4,224 @@
       "Identifies the network portion of an IP address",
       "Identifies the host portion of an IP address"
     ],
-    "correct": "Covers both required points without a major factual error.",
-    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
-    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+    "correct": "Covers both network and host identification.",
+    "partial": "Covers only one of the two portions, or gives a vague partial answer.",
+    "incorrect": "Contradicts the reference, negates the purpose, or is irrelevant."
   },
   "Q2": {
     "key_points": [
-      "Resolves domain names",
-      "Finds the corresponding IP address"
+      "Resolves human-readable domain names",
+      "Maps names to numerical IP addresses"
     ],
-    "correct": "Covers both required points without a major factual error.",
-    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
-    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+    "correct": "Explains resolving names to IP addresses.",
+    "partial": "Mentions only one aspect (names or IPs).",
+    "incorrect": "Confuses DNS with hosting, email, or negates its function."
   },
   "Q3": {
     "key_points": [
-      "Acknowledgements confirm receipt of data",
-      "Retransmissions recover missing or unacknowledged data"
+      "Acknowledgements confirm receipt of data segments",
+      "Retransmissions recover lost or unacknowledged packets"
     ],
-    "correct": "Covers both required points without a major factual error.",
-    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
-    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+    "correct": "Covers both ACKs confirming receipt and retransmissions recovering lost data.",
+    "partial": "Covers only acknowledgements or only retransmissions.",
+    "incorrect": "Claims TCP never resends data, confuses with UDP, or negates either mechanism."
   },
   "Q4": {
     "key_points": [
-      "Forwards packets between different networks",
-      "Uses routing information to select a next hop"
+      "Forwards packets between different networks at Layer 3",
+      "Uses routing table to select the optimal next hop"
     ],
-    "correct": "Covers both required points without a major factual error.",
-    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
-    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+    "correct": "Explains inter-network forwarding using routing tables.",
+    "partial": "Mentions forwarding or routing table but not both.",
+    "incorrect": "Confuses router with switch, states routers don't forward packets, or is irrelevant."
   },
   "Q5": {
     "key_points": [
       "Logically groups switch ports or devices",
-      "Creates a separate Layer 2 broadcast domain"
+      "Creates distinct Layer 2 broadcast domains"
     ],
-    "correct": "Covers both required points without a major factual error.",
-    "partial": "Gives one required point or a relevant but incomplete explanation without a major contradiction.",
-    "incorrect": "Contains a major misconception, contradicts the reference, or is irrelevant."
+    "correct": "Explains logical grouping AND separate broadcast domains.",
+    "partial": "Mentions only grouping or only broadcast domain isolation.",
+    "incorrect": "Confuses VLAN with VPN tunnel, physical wiring, or negates the grouping."
   },
   "Q6": {
     "key_points": [
-      "IP address is a logical Layer 3 address used for routing",
-      "MAC address is a physical Layer 2 hardware address for local delivery"
+      "IP address is logical Layer 3 used for routing",
+      "MAC address is physical Layer 2 for local frame delivery"
     ],
-    "correct": "Explains both the logical/routing nature of IP and physical/hardware nature of MAC.",
-    "partial": "Defines only IP address or only MAC address correctly.",
-    "incorrect": "Contains major factual misconceptions, confuses layers, or states they are identical."
+    "correct": "Contrasts logical routing role of IP with physical local-delivery role of MAC.",
+    "partial": "Correctly describes only IP or only MAC.",
+    "incorrect": "Swaps the definitions, calls them identical, or negates both."
   },
   "Q7": {
     "key_points": [
-      "Acts as an exit point or router for the local host",
-      "Forwards packets to external or remote networks"
+      "Acts as the router interface/exit point for the local subnet",
+      "Forwards packets to remote or external networks"
     ],
-    "correct": "Mentions that it is the router/gateway that handles traffic outside the local network.",
-    "partial": "States it connects to internet or is an IP address without explaining forwarding for external traffic.",
-    "incorrect": "Confuses gateway with DNS, DHCP, or local switch."
+    "correct": "Explains exit point role and forwarding to remote networks.",
+    "partial": "Mentions router without explaining remote forwarding or exit point role.",
+    "incorrect": "Confuses gateway with DNS/DHCP or states it doesn't forward external traffic."
   },
   "Q8": {
     "key_points": [
-      "HTTP transmits data unencrypted in plain text",
-      "HTTPS uses SSL/TLS encryption for secure communication"
+      "HTTP transmits unencrypted plain text",
+      "HTTPS uses SSL/TLS encryption for security and integrity"
     ],
-    "correct": "Mentions both HTTP being plain text/unencrypted and HTTPS using encryption (SSL/TLS).",
-    "partial": "Only mentions HTTPS is secure without explaining encryption vs plain text.",
-    "incorrect": "Claims HTTP is faster due to compression or confuses with hardware protocol."
+    "correct": "Explains plain-text HTTP vs SSL/TLS-encrypted HTTPS.",
+    "partial": "Mentions only that HTTPS is secure without explaining plain text vs encryption.",
+    "incorrect": "Claims HTTP is encrypted or negates HTTPS encryption."
   },
   "Q9": {
     "key_points": [
-      "Process has its own independent address space and resources",
-      "Thread is a lightweight unit sharing memory within the same process"
+      "Process has its own independent memory address space",
+      "Thread shares memory within the same process"
     ],
-    "correct": "Distinguishes independent process memory vs shared thread memory within a process.",
-    "partial": "Mentions threads are lightweight without explaining shared vs separate memory.",
-    "incorrect": "Claims threads have separate memory spaces or confuses with CPU cores."
+    "correct": "Explains separate address space of processes vs shared memory of threads.",
+    "partial": "Mentions only process isolation or only thread sharing.",
+    "incorrect": "Reverses memory ownership or claims threads have separate address spaces."
   },
   "Q10": {
     "key_points": [
-      "Uses secondary storage/disk as an extension of RAM",
-      "Allows running programs larger than physical RAM and provides isolation"
+      "Uses secondary disk storage as an extension of physical RAM",
+      "Enables programs larger than physical memory and provides isolation"
     ],
-    "correct": "Mentions using disk as RAM extension and running larger programs / isolation.",
-    "partial": "Mentions only paging or extra memory without explaining secondary storage extension.",
-    "incorrect": "Confuses virtual memory with cloud storage or CPU cache."
+    "correct": "Covers disk extension of RAM and enabling large programs or isolation.",
+    "partial": "Mentions only disk extension or only large program execution.",
+    "incorrect": "Confuses virtual memory with cloud storage, registers, or negates disk usage."
   },
   "Q11": {
     "key_points": [
-      "Two or more processes are permanently blocked or waiting",
-      "Each process holds a resource needed by another in a circular wait"
+      "Two or more processes are permanently blocked",
+      "Circular wait: each holds a resource the other needs"
     ],
-    "correct": "Mentions processes blocked waiting for resources held by each other.",
-    "partial": "Describes system freeze or waiting without mentioning circular resource holding.",
-    "incorrect": "Claims deadlock is a CPU hardware crash or infinite loop in code."
+    "correct": "Explains permanent blocking AND circular resource waiting.",
+    "partial": "Mentions blocked processes without circular wait, or waiting without permanent block.",
+    "incorrect": "Claims deadlock is a CPU crash, code loop, or negates blocking."
   },
   "Q12": {
     "key_points": [
-      "Primary key uniquely identifies records in a table and cannot be null",
-      "Foreign key references a primary key in another table to establish relationships"
+      "Primary key uniquely identifies records and cannot be null",
+      "Foreign key references a primary key in another table"
     ],
-    "correct": "Identifies uniqueness of primary key and relational reference of foreign key.",
-    "partial": "Defines only primary key or only foreign key.",
-    "incorrect": "Claims primary key connects tables and foreign key is unique in its own table."
+    "correct": "Covers uniqueness/non-null of PK and referential role of FK.",
+    "partial": "Defines only PK or only FK.",
+    "incorrect": "Swaps definitions or claims FK must be unique in its own table."
   },
   "Q13": {
     "key_points": [
-      "All operations in a transaction succeed completely or none do (all-or-nothing)",
-      "Rolls back all changes if any part of the transaction fails"
+      "All-or-nothing: all operations succeed or none do",
+      "Rolls back all changes on any failure"
     ],
-    "correct": "Clearly states the all-or-nothing execution rule and rollback on failure.",
-    "partial": "Mentions atomic means small or fast without the all-or-nothing rule.",
-    "incorrect": "Confuses atomicity with data isolation or thread locking."
+    "correct": "Covers all-or-nothing execution and rollback on failure.",
+    "partial": "Mentions only one aspect (all-or-nothing or rollback).",
+    "incorrect": "Confuses with isolation/speed, or negates rollback behaviour."
   },
   "Q14": {
     "key_points": [
-      "Speeds up data retrieval queries",
-      "Uses an organized data structure to avoid full table scans"
+      "Accelerates query retrieval speed",
+      "Avoids full table scans using an organised data structure"
     ],
-    "correct": "States faster lookup and avoiding full sequential table scans.",
-    "partial": "Mentions it helps find data faster without explaining indexing structure/scanning.",
-    "incorrect": "Claims index compresses data or prevents duplicate rows."
+    "correct": "Covers speed improvement and avoiding full scans.",
+    "partial": "Mentions only speed or only avoiding scans.",
+    "incorrect": "Claims indexes compress data or prevent duplicates; negates speed benefit."
   },
   "Q15": {
     "key_points": [
-      "Reduces data redundancy and duplicate storage",
-      "Prevents insertion, update, and deletion anomalies"
+      "Minimises data redundancy",
+      "Eliminates insertion, update, and deletion anomalies"
     ],
-    "correct": "Mentions reducing redundancy and eliminating modification anomalies.",
-    "partial": "States it cleans tables or splits data without explaining redundancy or anomalies.",
-    "incorrect": "Confuses normalization with data encryption or indexing."
+    "correct": "Covers reducing redundancy AND eliminating anomalies.",
+    "partial": "Mentions only one of the two goals.",
+    "incorrect": "Confuses normalisation with encryption, hashing, or negates redundancy reduction."
+  },
+  "Q16": {
+    "key_points": [
+      "Client sends SYN; server responds with SYN-ACK",
+      "Client sends final ACK establishing full-duplex connection"
+    ],
+    "correct": "Describes the full SYN \u2192 SYN-ACK \u2192 ACK exchange.",
+    "partial": "Mentions three steps but omits naming the control flags or the purpose.",
+    "incorrect": "Claims TCP is connectionless, confuses with TLS handshake, or negates the steps."
+  },
+  "Q17": {
+    "key_points": [
+      "Resolves known IP address to physical MAC address",
+      "Operates on the local network segment for frame delivery"
+    ],
+    "correct": "Explains IP-to-MAC resolution on the local link.",
+    "partial": "Mentions address resolution without specifying IP-to-MAC or local scope.",
+    "incorrect": "Reverses direction (MAC to IP) or claims ARP routes globally."
+  },
+  "Q18": {
+    "key_points": [
+      "TCP is connection-oriented and guarantees reliable in-order delivery",
+      "UDP is connectionless and low-latency without delivery guarantees"
+    ],
+    "correct": "Contrasts TCP reliability/ordering with UDP connectionless/low-latency nature.",
+    "partial": "Correctly describes only TCP or only UDP.",
+    "incorrect": "Claims UDP is more reliable than TCP, or that both use handshakes."
+  },
+  "Q19": {
+    "key_points": [
+      "Automatically assigns dynamic IP addresses to clients",
+      "Also provides subnet mask, default gateway, and DNS parameters"
+    ],
+    "correct": "Covers automatic IP assignment AND providing network config parameters.",
+    "partial": "Mentions only IP assignment without network config parameters.",
+    "incorrect": "Confuses DHCP with DNS, claims DHCP is an encryption tool."
+  },
+  "Q20": {
+    "key_points": [
+      "Preemptive scheduling can interrupt a running process",
+      "Non-preemptive scheduling lets a process keep the CPU until it yields or finishes"
+    ],
+    "correct": "Correctly contrasts preemptive interruption with non-preemptive voluntary release.",
+    "partial": "Correctly describes only one of the two scheduling types.",
+    "incorrect": "Reverses the definitions or confuses scheduling with memory paging."
+  },
+  "Q21": {
+    "key_points": [
+      "Divides memory into fixed-size pages and frames",
+      "Non-contiguous allocation eliminates external fragmentation"
+    ],
+    "correct": "Covers fixed-size pages/frames AND non-contiguous allocation eliminating external fragmentation.",
+    "partial": "Mentions pages and frames without explaining the fragmentation elimination, or vice versa.",
+    "incorrect": "Claims paging causes external fragmentation, or confuses with disk defragmentation."
+  },
+  "Q22": {
+    "key_points": [
+      "Mutex has ownership: only the locking thread can unlock",
+      "Binary semaphore has no ownership and can be signalled by any thread"
+    ],
+    "correct": "Correctly explains mutex ownership vs semaphore's absence of ownership.",
+    "partial": "States both are synchronisation primitives without explaining ownership difference.",
+    "incorrect": "Claims any thread can unlock a mutex, or swaps the ownership rules."
+  },
+  "Q23": {
+    "key_points": [
+      "Clustered index physically orders and stores data rows (one per table)",
+      "Non-clustered index is a separate pointer structure referencing data rows"
+    ],
+    "correct": "Correctly contrasts physical storage ordering (clustered) with separate pointer structure (non-clustered).",
+    "partial": "Correctly defines only clustered or only non-clustered index.",
+    "incorrect": "Claims a table can have many clustered indexes, or swaps the definitions."
+  },
+  "Q24": {
+    "key_points": [
+      "Concurrent transactions execute independently without interference",
+      "Prevents dirty reads, non-repeatable reads, and phantom reads"
+    ],
+    "correct": "Covers independent execution AND prevention of concurrency anomalies.",
+    "partial": "Mentions independence without naming the anomalies prevented, or vice versa.",
+    "incorrect": "Confuses isolation with durability or claims isolation eliminates the need for locking."
+  },
+  "Q25": {
+    "key_points": [
+      "WHERE filters rows before any grouping or aggregation",
+      "HAVING filters aggregated groups after GROUP BY is applied"
+    ],
+    "correct": "Correctly contrasts row-level filtering before grouping (WHERE) with group-level filtering after aggregation (HAVING).",
+    "partial": "Correctly describes only WHERE or only HAVING.",
+    "incorrect": "Claims WHERE can filter aggregates or swaps the clause purposes."
   }
 }
