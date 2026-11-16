@@ -15,23 +15,32 @@ from pydantic import BaseModel
 from core import AnswerGrader, build_bank, group_similar_mistakes, load_data, summarize
 
 BASE_DIR = Path(__file__).parent
-MODEL_PATH = BASE_DIR / "models" / "tfidf.joblib"
+MODELS_DIR = BASE_DIR / "models"
 
 app = FastAPI(title="Answer Sheet Analyzer")
 
-
-def load_grader():
-    """Load the saved model. If it is missing, train one from the sample data."""
-    if MODEL_PATH.exists():
-        return AnswerGrader.load(MODEL_PATH)
-    questions, responses, rubrics = load_data(str(BASE_DIR / "data"))
-    bank = build_bank(questions, rubrics)
-    grader = AnswerGrader("tfidf").fit(responses, bank)
-    grader.save(MODEL_PATH)
-    return grader
+graders: dict[str, AnswerGrader] = {}
 
 
-grader = load_grader()
+def get_grader(backend: str = "tfidf") -> AnswerGrader:
+    """Load the model for the requested backend (tfidf or sbert), caching it in memory."""
+    if backend not in ("tfidf", "sbert"):
+        backend = "tfidf"
+    if backend not in graders:
+        model_path = MODELS_DIR / f"{backend}.joblib"
+        if model_path.exists():
+            graders[backend] = AnswerGrader.load(model_path)
+        else:
+            questions, responses, rubrics = load_data(str(BASE_DIR / "data"))
+            bank = build_bank(questions, rubrics)
+            g = AnswerGrader(backend).fit(responses, bank)
+            g.save(model_path)
+            graders[backend] = g
+    return graders[backend]
+
+
+# Preload the default TF-IDF grader
+grader = get_grader("tfidf")
 
 
 def to_records(table):
@@ -43,10 +52,12 @@ def to_records(table):
 class AnswerIn(BaseModel):
     question_id: str
     answer: str
+    backend: str = "tfidf"
 
 
 class CsvIn(BaseModel):
     csv_text: str
+    backend: str = "tfidf"
 
 
 @app.get("/")
@@ -56,6 +67,7 @@ def home():
 
 @app.get("/api/questions")
 def list_questions():
+    bank = get_grader("tfidf").bank
     return [
         {
             "question_id": qid,
@@ -63,7 +75,7 @@ def list_questions():
             "topic": info["topic"],
             "model_answer": info["model_answer"],
         }
-        for qid, info in grader.bank.items()
+        for qid, info in bank.items()
     ]
 
 
@@ -78,7 +90,10 @@ def get_demo_csv():
 @app.post("/api/predict")
 def predict(item: AnswerIn):
     try:
-        return grader.predict_one(item.question_id, item.answer)
+        current_grader = get_grader(item.backend)
+        res = current_grader.predict_one(item.question_id, item.answer)
+        res["backend"] = item.backend
+        return res
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error))
 
@@ -97,16 +112,18 @@ def analyze(item: CsvIn):
     if data.empty:
         raise HTTPException(status_code=400, detail="The CSV has no rows.")
 
+    current_grader = get_grader(item.backend)
     try:
-        predictions = grader.predict_table(data)
+        predictions = current_grader.predict_table(data)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error))
 
     rows = predictions[["response_id", "question_id", "student_answer",
                         "predicted_label", "reference_similarity"]].round(3)
     return {
+        "backend": item.backend,
         "responses": to_records(rows),
-        "by_question": to_records(summarize(predictions, grader.bank, "question_id")),
-        "by_topic": to_records(summarize(predictions, grader.bank, "topic")),
-        "mistake_groups": group_similar_mistakes(predictions, grader.similarity),
+        "by_question": to_records(summarize(predictions, current_grader.bank, "question_id")),
+        "by_topic": to_records(summarize(predictions, current_grader.bank, "topic")),
+        "mistake_groups": group_similar_mistakes(predictions, current_grader.similarity),
     }

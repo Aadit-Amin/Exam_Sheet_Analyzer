@@ -340,6 +340,47 @@
     transform: scale(1.1);
   }
 
+  /* ================= CLEAN MODEL SELECTOR (NO LIQUID GLASS) ================= */
+  .model-select-group {
+    display: flex;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    padding: 3px;
+    gap: 4px;
+    box-sizing: border-box;
+  }
+  .clean-model-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.48rem 0.85rem;
+    font-size: 0.83rem;
+    font-weight: 600;
+    font-family: inherit;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: calc(var(--radius-sm) - 2px);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    line-height: 1.2;
+    transform: none !important;
+  }
+  .clean-model-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .clean-model-btn.active {
+    background: #ffffff;
+    color: #1d4ed8;
+    font-weight: 700;
+    border-color: #cbd5e1;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  }
+
   /* Tab Panes */
   .tab-content { display: none; }
   .tab-content.active {
@@ -1127,7 +1168,7 @@
       <div class="wm-accent-beam" aria-hidden="true"></div>
     </div>
 
-    <!-- Liquid Glass Navigation Tabs (Single Answer Grader is default first tab) -->
+    <!-- Liquid Glass Navigation Tabs anchored to the Top-Right Corner -->
     <nav class="liquid-tabs-nav" aria-label="Main Navigation">
       <button class="liquid-tab-btn active" id="btn-tab-single" onclick="switchTab('single')">
         <span class="tab-svg-icon">
@@ -1204,6 +1245,24 @@
           <textarea id="single-answer-input" placeholder="Type or paste the student's short answer here..."></textarea>
         </div>
 
+        <!-- Clean Model Selection (Right above Grade Answer, No Liquid Glass) -->
+        <div class="form-group" style="margin-bottom: 1.15rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem;">
+            <label class="form-label" style="margin-bottom: 0; font-size: 0.82rem;">Evaluation Model</label>
+            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;" id="single-model-hint">TF-IDF (Fast word matching)</span>
+          </div>
+          <div class="model-select-group">
+            <button type="button" class="clean-model-btn active" id="btn-model-tfidf" onclick="setBackend('tfidf')" title="TF-IDF: Lightweight n-gram frequency word matching">
+              <span>⚡</span>
+              <span>TF-IDF</span>
+            </button>
+            <button type="button" class="clean-model-btn" id="btn-model-sbert" onclick="setBackend('sbert')" title="Sentence-BERT: Deep semantic transformer embeddings">
+              <span>🧠</span>
+              <span>Sentence-BERT</span>
+            </button>
+          </div>
+        </div>
+
         <button class="btn btn-primary" id="btn-grade-single" onclick="gradeSingleAnswer()" style="width: 100%; justify-content: center;">
           <span class="btn-icon">
             <!-- Rare Assessment Scoring Execution Pulse / Checkmark Quill -->
@@ -1235,6 +1294,7 @@
             </h2>
             <p class="card-desc">Evidence breakdown across model answer and rubric key points.</p>
           </div>
+          <span id="single-model-badge" class="pill-badge pill-neutral" style="font-size: 0.76rem; font-weight: 700;">Engine: TF-IDF</span>
         </div>
 
         <div id="single-inspector-placeholder" class="empty-state">
@@ -1319,9 +1379,30 @@
         <p style="font-size: 0.96rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
           Select or drop student answer sheet CSV
         </p>
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.15rem;">
           Expected columns: <code>response_id</code>, <code>question_id</code>, <code>student_answer</code>
         </p>
+
+        <!-- Clean Model Selection for Batch Analysis -->
+        <div style="display: flex; justify-content: center; margin-bottom: 1.25rem;">
+          <div style="max-width: 320px; width: 100%; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">Classification Engine</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);" id="diag-model-hint">TF-IDF</span>
+            </div>
+            <div class="model-select-group">
+              <button type="button" class="clean-model-btn active" id="btn-diag-tfidf" onclick="setBackend('tfidf')" title="TF-IDF: Lightweight n-gram frequency word matching">
+                <span>⚡</span>
+                <span>TF-IDF</span>
+              </button>
+              <button type="button" class="clean-model-btn" id="btn-diag-sbert" onclick="setBackend('sbert')" title="Sentence-BERT: Deep semantic transformer embeddings">
+                <span>🧠</span>
+                <span>Sentence-BERT</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="action-row">
           <input type="file" id="csv-file-input" accept=".csv" style="display: none;" onchange="handleFileSelected(event)">
           <button class="btn btn-secondary" onclick="document.getElementById('csv-file-input').click()">
@@ -1425,12 +1506,15 @@
         </div>
       </div>
 
-      <!-- Chart Legend -->
-      <div class="chart-legend">
-        <div class="legend-item"><span class="legend-dot" style="background: var(--correct);"></span> Correct</div>
-        <div class="legend-item"><span class="legend-dot" style="background: var(--partial);"></span> Partial</div>
-        <div class="legend-item"><span class="legend-dot" style="background: var(--incorrect);"></span> Incorrect</div>
-        <div class="legend-item"><span class="legend-dot" style="background: var(--blank);"></span> Blank</div>
+      <!-- Chart Legend & Engine Indicator -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div class="chart-legend" style="margin-bottom: 0;">
+          <div class="legend-item"><span class="legend-dot" style="background: var(--correct);"></span> Correct</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--partial);"></span> Partial</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--incorrect);"></span> Incorrect</div>
+          <div class="legend-item"><span class="legend-dot" style="background: var(--blank);"></span> Blank</div>
+        </div>
+        <span id="diag-model-badge" class="pill-badge pill-neutral" style="font-size: 0.76rem; font-weight: 700;">Engine: TF-IDF</span>
       </div>
 
       <!-- Question Difficulty Chart in Liquid Glass Card -->
@@ -1564,6 +1648,36 @@
 // Global State
 let questionBank = {};
 let latestAnalysisData = null;
+let currentBackend = "tfidf";
+
+function setBackend(backend) {
+  currentBackend = backend;
+
+  // Update Single Grader buttons
+  const btnTfidf = document.getElementById("btn-model-tfidf");
+  const btnSbert = document.getElementById("btn-model-sbert");
+  if (btnTfidf) btnTfidf.classList.toggle("active", backend === "tfidf");
+  if (btnSbert) btnSbert.classList.toggle("active", backend === "sbert");
+
+  // Update Diagnostics buttons
+  const btnDiagTfidf = document.getElementById("btn-diag-tfidf");
+  const btnDiagSbert = document.getElementById("btn-diag-sbert");
+  if (btnDiagTfidf) btnDiagTfidf.classList.toggle("active", backend === "tfidf");
+  if (btnDiagSbert) btnDiagSbert.classList.toggle("active", backend === "sbert");
+
+  // Update hints
+  const singleHint = document.getElementById("single-model-hint");
+  if (singleHint) singleHint.textContent = backend === "sbert" ? "Sentence-BERT (Deep semantic embeddings)" : "TF-IDF (Fast word matching)";
+  const diagHint = document.getElementById("diag-model-hint");
+  if (diagHint) diagHint.textContent = backend === "sbert" ? "Sentence-BERT (Deep semantics)" : "TF-IDF";
+
+  // Update status badges
+  const badgeText = backend === "sbert" ? "Engine: Sentence-BERT" : "Engine: TF-IDF";
+  const singleBadge = document.getElementById("single-model-badge");
+  if (singleBadge) singleBadge.textContent = badgeText;
+  const diagBadge = document.getElementById("diag-model-badge");
+  if (diagBadge) diagBadge.textContent = badgeText;
+}
 
 // Tab Switching
 function switchTab(tabId) {
@@ -1649,7 +1763,7 @@ async function gradeSingleAnswer() {
     const res = await fetch("/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question_id: questionId, answer: answer })
+      body: JSON.stringify({ question_id: questionId, answer: answer, backend: currentBackend })
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.detail || "Grading request failed");
@@ -1797,7 +1911,7 @@ async function submitCsvAnalysis(csvText) {
     const res = await fetch("/api/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ csv_text: csvText })
+      body: JSON.stringify({ csv_text: csvText, backend: currentBackend })
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.detail || "Analysis failed");
