@@ -57,9 +57,22 @@ def home():
 @app.get("/api/questions")
 def list_questions():
     return [
-        {"question_id": qid, "question": info["question"], "topic": info["topic"]}
+        {
+            "question_id": qid,
+            "question": info["question"],
+            "topic": info["topic"],
+            "model_answer": info["model_answer"],
+        }
         for qid, info in grader.bank.items()
     ]
+
+
+@app.get("/api/demo-csv")
+def get_demo_csv():
+    demo_file = BASE_DIR / "data" / "responses.csv"
+    if not demo_file.exists():
+        raise HTTPException(status_code=404, detail="Demo responses file not found.")
+    return {"csv_text": demo_file.read_text(encoding="utf-8")}
 
 
 @app.post("/api/predict")
