@@ -1,25 +1,25 @@
 {
   "backend": "tfidf",
   "macro_f1": {
-    "majority": 0.16666666666666666,
-    "similarity_threshold": 0.40359232251605737,
-    "classifier": 0.6079928832617004
+    "majority": 0.3209090909090909,
+    "similarity_threshold": 0.5537442526681914,
+    "classifier": 0.6606958526970584
   },
   "confusion_matrix": [
     [
-      38,
-      37,
-      15
+      126,
+      79,
+      45
     ],
     [
-      30,
-      52,
-      8
+      84,
+      146,
+      20
     ],
     [
-      7,
-      7,
-      76
+      8,
+      12,
+      230
     ]
   ],
   "labels": [
